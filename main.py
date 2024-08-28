@@ -10,10 +10,10 @@ if __name__ == '__main__':
     platform = sys.argv[1]
     taskname = sys.argv[2]
 
-    directory = os.path.join(cfg['folder_path']['downloaded_path'],platform,taskname)
+    directory = os.path.join(cfg['folder_path']['downloaded_path'],platform)
     output_filename = os.path.join(cfg['folder_path']['output_path'],f"{platform}-{taskname}.tar.gz")
 
-    command = f'tar -czvf {output_filename} {directory}'
+    command = f'tar -czvf {output_filename} -C {directory} {taskname}'
 
     result = os.system(command)
 
