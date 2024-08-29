@@ -12,10 +12,10 @@ if __name__ == '__main__':
 
     directory = os.path.join(cfg['folder_path']['downloaded_path'],platform)
     output_filename = os.path.join(cfg['folder_path']['output_path'],f"{platform}-{taskname}.tar.gz")
-
+    
     command = f'tar -czvf {output_filename} -C {directory} {taskname}'
 
     result = os.system(command)
 
     command_del = f'rm -r {directory}'
-    result = os.system(command_del)
+    # result = os.system(command_del)
